@@ -28,8 +28,8 @@
 
 前往 **[Releases 页面](https://github.com/haoeastspeed/AuroraDict/releases/latest)** 下载最新版本：
 
-- 下载 `极光词典.exe`
-- 双击即可运行，无需安装、无需联网
+- 下载 `AuroraDict.exe`
+- 双击即可运行，无需安装、无需联网（界面名称为「极光词典」）
 
 **系统要求**：Windows 10 / 11（64 位），需 .NET Framework 4.0 或更高版本（系统通常已自带）。
 
