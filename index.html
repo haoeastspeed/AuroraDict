@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>极光词典 AuroraDict — 完全离线的英汉·汉英桌面词典</title>
+<meta name="description" content="极光词典是一款完全离线、免费、快速的 Windows 英汉·汉英桌面词典，内置 326 万英文词条与 12 万中文词条，自研检索内核，支持在线回退、自动更新、生词本复习与离线发音。">
+<style>
+  :root{
+    --bg:#0a0d13;
+    --bg2:#0e121b;
+    --card:rgba(255,255,255,.035);
+    --card-border:rgba(255,255,255,.09);
+    --text:#e9edf3;
+    --muted:#9aa4b4;
+    --faint:#6b7484;
+    --cyan:#22d3ee;
+    --blue:#3b82f6;
+    --violet:#8b5cf6;
+    --grad:linear-gradient(135deg,#22d3ee 0%,#3b82f6 55%,#8b5cf6 100%);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:"Microsoft YaHei UI","Microsoft YaHei","PingFang SC",
+      "Segoe UI",system-ui,-apple-system,sans-serif;
+    background:var(--bg);color:var(--text);line-height:1.65;
+    -webkit-font-smoothing:antialiased;overflow-x:hidden;
+  }
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+
+  /* nav */
+  nav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(10,13,19,.72);backdrop-filter:blur(14px);
+    border-bottom:1px solid var(--card-border);
+  }
+  .navin{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .brand{display:flex;align-items:center;gap:11px;font-weight:700;font-size:17px}
+  .logo{
+    width:32px;height:32px;border-radius:9px;background:var(--grad);
+    display:flex;align-items:center;justify-content:center;
+    color:#fff;font-size:16px;font-weight:800;
+    box-shadow:0 4px 14px rgba(59,130,246,.4);
+  }
+  .navlinks{display:flex;gap:26px;align-items:center;font-size:14.5px;color:var(--muted)}
+  .navlinks a:hover{color:var(--text)}
+  .ghbtn{
+    border:1px solid var(--card-border);padding:7px 15px;border-radius:9px;
+    color:var(--text);background:var(--card);
+  }
+  .ghbtn:hover{background:rgba(255,255,255,.08)}
+
+  /* hero */
+  header.hero{position:relative;padding:96px 0 70px;text-align:center}
+  .glow{
+    position:absolute;top:-180px;left:50%;transform:translateX(-50%);
+    width:900px;height:520px;pointer-events:none;
+    background:
+      radial-gradient(closest-side,rgba(34,211,238,.20),transparent),
+      radial-gradient(closest-side,rgba(59,130,246,.18),transparent);
+    background-size:60% 80%,70% 80%;
+    background-position:20% 30%,85% 20%;
+    background-repeat:no-repeat;filter:blur(10px);
+  }
+  .badge{
+    display:inline-flex;align-items:center;gap:8px;font-size:13px;color:var(--muted);
+    border:1px solid var(--card-border);background:var(--card);
+    padding:6px 14px;border-radius:999px;margin-bottom:26px;
+  }
+  .badge .dot{width:7px;height:7px;border-radius:50%;background:var(--cyan)}
+  h1{
+    font-size:clamp(34px,5.4vw,58px);font-weight:800;letter-spacing:.5px;
+    line-height:1.15;margin-bottom:20px;
+  }
+  h1 .g{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .sub{font-size:clamp(15.5px,2vw,19px);color:var(--muted);max-width:680px;margin:0 auto 38px}
+  .cta{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+  .btn{
+    display:inline-flex;align-items:center;gap:9px;font-size:16px;font-weight:600;
+    padding:14px 30px;border-radius:12px;transition:transform .15s,box-shadow .15s;
+  }
+  .btn-primary{background:var(--grad);color:#fff;box-shadow:0 10px 30px rgba(59,130,246,.35)}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 14px 38px rgba(59,130,246,.5)}
+  .btn-ghost{border:1px solid var(--card-border);background:var(--card);color:var(--text)}
+  .btn-ghost:hover{background:rgba(255,255,255,.08);transform:translateY(-2px)}
+  .meta{margin-top:22px;font-size:13.5px;color:var(--faint)}
+
+  /* shot */
+  .shotwrap{position:relative;padding:10px 0 30px}
+  .shot{
+    border-radius:14px;border:1px solid var(--card-border);
+    box-shadow:0 30px 80px rgba(0,0,0,.6),0 0 0 1px rgba(255,255,255,.03);
+    display:block;width:100%;height:auto;
+  }
+  .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:26px}
+  .gallery .shot{border-radius:12px}
+
+  /* sections */
+  section{padding:78px 0}
+  .sec-head{text-align:center;margin-bottom:52px}
+  .sec-head h2{font-size:clamp(26px,3.4vw,36px);font-weight:800;margin-bottom:14px}
+  .sec-head p{color:var(--muted);font-size:16.5px;max-width:620px;margin:0 auto}
+  .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+  .feat{
+    background:var(--card);border:1px solid var(--card-border);
+    border-radius:15px;padding:26px 22px;transition:transform .15s,border-color .15s;
+  }
+  .feat:hover{transform:translateY(-4px);border-color:rgba(59,130,246,.4)}
+  .feat .ic{
+    width:44px;height:44px;border-radius:11px;display:flex;align-items:center;
+    justify-content:center;font-size:22px;margin-bottom:16px;
+    background:linear-gradient(135deg,rgba(34,211,238,.16),rgba(59,130,246,.16));
+    border:1px solid rgba(59,130,246,.25);
+  }
+  .feat h3{font-size:16.5px;margin-bottom:8px}
+  .feat p{font-size:14px;color:var(--muted)}
+
+  /* stats */
+  .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;text-align:center}
+  .stat{background:var(--card);border:1px solid var(--card-border);border-radius:15px;padding:34px 18px}
+  .stat .num{font-size:clamp(30px,4vw,42px);font-weight:800;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .stat .lab{color:var(--muted);font-size:14.5px;margin-top:6px}
+
+  /* download band */
+  .band{
+    background:linear-gradient(135deg,rgba(34,211,238,.10),rgba(59,130,246,.10),rgba(139,92,246,.10));
+    border:1px solid var(--card-border);border-radius:22px;
+    padding:56px 34px;text-align:center;
+  }
+  .band h2{font-size:clamp(24px,3vw,32px);margin-bottom:12px}
+  .band p{color:var(--muted);margin-bottom:30px}
+  .req{margin-top:24px;font-size:13.5px;color:var(--faint)}
+
+  footer{border-top:1px solid var(--card-border);padding:38px 0;color:var(--faint);font-size:13.5px}
+  .fin{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+  .fin a:hover{color:var(--muted)}
+
+  @media(max-width:900px){
+    .grid{grid-template-columns:repeat(2,1fr)}
+    .gallery{grid-template-columns:1fr}
+    .stats{grid-template-columns:1fr}
+    .navlinks a:not(.ghbtn){display:none}
+  }
+  @media(max-width:520px){.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap navin">
+    <div class="brand"><span class="logo">词</span>极光词典 <span style="color:var(--faint);font-weight:500;font-size:13px">AuroraDict</span></div>
+    <div class="navlinks">
+      <a href="#features">特性</a>
+      <a href="#screens">界面</a>
+      <a href="#data">数据</a>
+      <a href="#download">下载</a>
+      <a class="ghbtn" href="https://github.com/haoeastspeed/AuroraDict" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="glow"></div>
+  <div class="wrap">
+    <span class="badge"><span class="dot"></span>v1.0.0 现已发布 · Windows 10 / 11</span>
+    <h1>完全离线的<br><span class="g">英汉 · 汉英桌面词典</span></h1>
+    <p class="sub">单文件、免安装、零运行库依赖。内置 326 万英文词条与 12 万中文词条，自研检索内核毫秒响应；本地查不到时可在线回退，并支持一键自动更新。</p>
+    <div class="cta">
+      <a class="btn btn-primary" href="https://github.com/haoeastspeed/AuroraDict/releases/latest" target="_blank" rel="noopener">⬇ 免费下载</a>
+      <a class="btn btn-ghost" href="https://github.com/haoeastspeed/AuroraDict" target="_blank" rel="noopener">在 GitHub 查看</a>
+    </div>
+    <p class="meta">免费使用 · 不收集任何数据 · 断网照常工作</p>
+  </div>
+</header>
+
+<div class="wrap shotwrap" id="screens">
+  <img class="shot" src="screens/light_en.png" alt="极光词典主界面：英文单词 abandon 的详细解释卡片" loading="lazy">
+  <div class="gallery">
+    <img class="shot" src="screens/dark_en.png" alt="深色主题查询 serendipity" loading="lazy">
+    <img class="shot" src="screens/zh.png" alt="中文成语查询" loading="lazy">
+    <img class="shot" src="screens/settings.png" alt="设置页面" loading="lazy">
+  </div>
+</div>
+
+<section id="features">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>为高效查词而生</h2>
+      <p>对标主流专业词典，从内核到界面全部自研，兼顾速度、美观与隐私。</p>
+    </div>
+    <div class="grid">
+      <div class="feat"><div class="ic">🛰️</div><h3>完全离线</h3><p>词库随程序本地存储，断网可用；不发起追踪、不收集任何个人数据。</p></div>
+      <div class="feat"><div class="ic">📚</div><h3>海量词库</h3><p>326 万英文词条（含变形、短语、考试标签）与 12 万中文词条（含拼音、繁体）。</p></div>
+      <div class="feat"><div class="ic">⚡</div><h3>自研内核</h3><p>检索、Trie 索引、中文分词、拼写纠错、词形还原全部自研，查询毫秒级响应。</p></div>
+      <div class="feat"><div class="ic">🌐</div><h3>在线回退</h3><p>本地未收录且有网络时，自动尝试在线翻译；离线或关闭开关则不发起请求。</p></div>
+      <div class="feat"><div class="ic">🔄</div><h3>自动更新</h3><p>启动时后台检查 GitHub 最新版本，发现新版本可一键下载并自动完成替换。</p></div>
+      <div class="feat"><div class="ic">🃏</div><h3>生词本复习</h3><p>一键收藏生词，闪卡复习巩固，支持导出纯文本与 Anki 牌组格式。</p></div>
+      <div class="feat"><div class="ic">🔊</div><h3>离线发音</h3><p>英文、中文双语音，基于 Windows 内置语音合成，无需联网即可朗读。</p></div>
+      <div class="feat"><div class="ic">🎨</div><h3>深浅色主题</h3><p>精美自绘界面与浅色/深色主题，支持全局热键 Ctrl+Alt+D 与复制后查词。</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="data" style="padding-top:20px">
+  <div class="wrap">
+    <div class="stats">
+      <div class="stat"><div class="num">3,268,005</div><div class="lab">英文词条（ECDICT）</div></div>
+      <div class="stat"><div class="num">121,408</div><div class="lab">中文词条（CC-CEDICT）</div></div>
+      <div class="stat"><div class="num">0</div><div class="lab">第三方运行库依赖</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="download">
+  <div class="wrap">
+    <div class="band">
+      <h2>立即下载极光词典</h2>
+      <p>单文件免安装，下载后双击即可使用。</p>
+      <div class="cta">
+        <a class="btn btn-primary" href="https://github.com/haoeastspeed/AuroraDict/releases/latest" target="_blank" rel="noopener">⬇ 下载最新版本</a>
+        <a class="btn btn-ghost" href="https://github.com/haoeastspeed/AuroraDict/releases" target="_blank" rel="noopener">所有版本</a>
+      </div>
+      <p class="req">系统要求：Windows 10 / 11（64 位）· 需 .NET Framework 4.0 或更高版本（系统自带）· 约 103 MB</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap fin">
+    <div>© 2026 极光词典 AuroraDict · 免费软件</div>
+    <div>
+      词库数据：
+      <a href="https://github.com/skywind3000/ECDICT" target="_blank" rel="noopener">ECDICT</a>（MIT License） ·
+      <a href="https://www.mdbg.net/chinese/dictionary?page=cc-cedict" target="_blank" rel="noopener">CC-CEDICT</a>（CC BY-SA 3.0）
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
