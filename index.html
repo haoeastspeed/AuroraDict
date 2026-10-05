@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>极光词典 AuroraDict — 完全离线的英汉·汉英桌面词典</title>
-<meta name="description" content="极光词典是一款完全离线、免费、快速的 Windows 英汉·汉英桌面词典，内置 326 万英文词条与 12 万中文词条，自研检索内核，支持在线回退、自动更新、生词本复习与离线发音。">
+<title>极光词典 AuroraDict — 离线优先的英汉·汉英桌面词典</title>
+<meta name="description" content="极光词典是一款离线优先、免费、快速的 Windows 英汉·汉英桌面词典，内置 326 万英文词条与 12 万中文词条，自研检索内核；在线翻译与自动更新为可选功能、默认关闭，另含生词本复习与离线发音。">
 <style>
   :root{
     --bg:#0a0d13;
@@ -164,14 +164,14 @@
 <header class="hero">
   <div class="glow"></div>
   <div class="wrap">
-    <span class="badge"><span class="dot"></span>v1.0.0 现已发布 · Windows 10 / 11</span>
+    <span class="badge"><span class="dot"></span>v1.0.1 现已发布 · Windows 10 / 11</span>
     <h1>完全离线的<br><span class="g">英汉 · 汉英桌面词典</span></h1>
-    <p class="sub">单文件、免安装、零运行库依赖。内置 326 万英文词条与 12 万中文词条，自研检索内核毫秒响应；本地查不到时可在线回退，并支持一键自动更新。</p>
+    <p class="sub">单文件、免安装、零运行库依赖。内置 326 万英文词条与 12 万中文词条，自研检索内核毫秒响应；在线翻译与自动更新为可选功能、默认关闭，按需一键开启。</p>
     <div class="cta">
       <a class="btn btn-primary" href="https://github.com/haoeastspeed/AuroraDict/releases/latest" target="_blank" rel="noopener">⬇ 免费下载</a>
       <a class="btn btn-ghost" href="https://github.com/haoeastspeed/AuroraDict" target="_blank" rel="noopener">在 GitHub 查看</a>
     </div>
-    <p class="meta">免费使用 · 不收集任何数据 · 断网照常工作</p>
+    <p class="meta">免费使用 · 开箱不联网 · 断网照常工作</p>
   </div>
 </header>
 
@@ -191,11 +191,11 @@
       <p>对标主流专业词典，从内核到界面全部自研，兼顾速度、美观与隐私。</p>
     </div>
     <div class="grid">
-      <div class="feat"><div class="ic">🛰️</div><h3>完全离线</h3><p>词库随程序本地存储，断网可用；不发起追踪、不收集任何个人数据。</p></div>
+      <div class="feat"><div class="ic">🛰️</div><h3>默认离线</h3><p>词库随程序本地存储，开箱不联网，断网照常可用；不发起追踪、不收集任何个人数据。</p></div>
       <div class="feat"><div class="ic">📚</div><h3>海量词库</h3><p>326 万英文词条（含变形、短语、考试标签）与 12 万中文词条（含拼音、繁体）。</p></div>
       <div class="feat"><div class="ic">⚡</div><h3>自研内核</h3><p>检索、Trie 索引、中文分词、拼写纠错、词形还原全部自研，查询毫秒级响应。</p></div>
-      <div class="feat"><div class="ic">🌐</div><h3>在线回退</h3><p>本地未收录且有网络时，自动尝试在线翻译；离线或关闭开关则不发起请求。</p></div>
-      <div class="feat"><div class="ic">🔄</div><h3>自动更新</h3><p>启动时后台检查 GitHub 最新版本，发现新版本可一键下载并自动完成替换。</p></div>
+      <div class="feat"><div class="ic">🌐</div><h3>在线回退</h3><p>默认关闭；手动开启后，本地未收录时才在线翻译，查询词仅在此时发送。</p></div>
+      <div class="feat"><div class="ic">🔄</div><h3>自动更新</h3><p>默认关闭；可手动检查或开启启动检查，下载经 SHA256 校验、更新前备份、失败回滚。</p></div>
       <div class="feat"><div class="ic">🃏</div><h3>生词本复习</h3><p>一键收藏生词，闪卡复习巩固，支持导出纯文本与 Anki 牌组格式。</p></div>
       <div class="feat"><div class="ic">🔊</div><h3>离线发音</h3><p>英文、中文双语音，基于 Windows 内置语音合成，无需联网即可朗读。</p></div>
       <div class="feat"><div class="ic">🎨</div><h3>深浅色主题</h3><p>精美自绘界面与浅色/深色主题，支持全局热键 Ctrl+Alt+D 与复制后查词。</p></div>
@@ -222,7 +222,7 @@
         <a class="btn btn-primary" href="https://github.com/haoeastspeed/AuroraDict/releases/latest" target="_blank" rel="noopener">⬇ 下载最新版本</a>
         <a class="btn btn-ghost" href="https://github.com/haoeastspeed/AuroraDict/releases" target="_blank" rel="noopener">所有版本</a>
       </div>
-      <p class="req">系统要求：Windows 10 / 11（64 位）· 需 .NET Framework 4.0 或更高版本（系统自带）· 约 103 MB<br>国内直连 GitHub 较慢，建议开启本地 / 系统代理；自动更新会依次尝试直连、系统代理与 127.0.0.1:7890。</p>
+      <p class="req">系统要求：Windows 10 / 11（32 位与 64 位均可，亦兼容 Win7 / 8.1）· 需 .NET Framework 4.5+（Win10/11 自带 4.8）· 约 103 MB<br>国内直连 GitHub 较慢，建议开启本地 / 系统代理；自动更新会依次尝试直连、系统代理与 127.0.0.1:7890。</p>
     </div>
   </div>
 </section>
