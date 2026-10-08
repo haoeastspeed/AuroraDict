@@ -5,7 +5,7 @@
 单文件、免安装、不依赖任何第三方运行库。内置 **326 万英文词条**与 **12 万中文词条**，自研检索内核，毫秒响应；在线翻译与自动更新均为**可选功能、默认关闭**，需要时一键开启。
 
 ![平台](https://img.shields.io/badge/platform-Windows%2010%2F11-3b82f6)
-![版本](https://img.shields.io/badge/version-1.0.2-22d3ee)
+![版本](https://img.shields.io/badge/version-1.0.3-22d3ee)
 ![离线](https://img.shields.io/badge/works%20offline-yes-8b5cf6)
 ![许可](https://img.shields.io/badge/license-Free%20Software-green)
 
