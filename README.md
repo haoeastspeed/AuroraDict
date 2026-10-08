@@ -5,7 +5,7 @@
 单文件、免安装、不依赖任何第三方运行库。内置 **326 万英文词条**与 **12 万中文词条**，自研检索内核，毫秒响应；在线翻译与自动更新均为**可选功能、默认关闭**，需要时一键开启。
 
 ![平台](https://img.shields.io/badge/platform-Windows%2010%2F11-3b82f6)
-![版本](https://img.shields.io/badge/version-1.0.1-22d3ee)
+![版本](https://img.shields.io/badge/version-1.0.2-22d3ee)
 ![离线](https://img.shields.io/badge/works%20offline-yes-8b5cf6)
 ![许可](https://img.shields.io/badge/license-Free%20Software-green)
 
@@ -22,7 +22,8 @@
 - **生词本与复习**：收藏生词、闪卡复习，支持导出纯文本与 Anki（TSV）牌组。
 - **离线发音**：英文、中文双语音，基于 Windows 内置语音合成。
 - **快捷取词**：全局热键 `Ctrl+Alt+D`，可选复制后自动查词。
-- **深浅色主题**：自绘界面，浅色 / 深色自由切换。
+- **清爽释义**：可一键隐藏中文释义开头的 [网络] / [计] / [医] 等分类标记，直接显示译文（默认开启）。
+- **深浅色主题**：自绘界面与滚动条，浅色 / 深色自由切换，滚动条颜色随主题变化。
 
 ## 📥 下载与安装
 
