@@ -94,7 +94,7 @@
     box-shadow:0 30px 80px rgba(0,0,0,.6),0 0 0 1px rgba(255,255,255,.03);
     display:block;width:100%;height:auto;
   }
-  .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:26px}
+  .gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-top:26px}
   .gallery .shot{border-radius:12px}
 
   /* sections */
@@ -164,7 +164,7 @@
 <header class="hero">
   <div class="glow"></div>
   <div class="wrap">
-    <span class="badge"><span class="dot"></span>v1.0.5 现已发布 · Windows 10 / 11</span>
+    <span class="badge"><span class="dot"></span>v1.0.6 现已发布 · Windows 10 / 11</span>
     <h1>完全离线的<br><span class="g">英汉 · 汉英桌面词典</span></h1>
     <p class="sub">单文件、免安装、零运行库依赖。内置 326 万英文词条与 12 万中文词条，自研检索内核毫秒响应；在线翻译与自动更新为可选功能、默认关闭，按需一键开启。</p>
     <div class="cta">
@@ -176,11 +176,12 @@
 </header>
 
 <div class="wrap shotwrap" id="screens">
-  <img class="shot" src="screens/light_en.png" alt="极光词典主界面：英文单词 abandon 的详细解释卡片" loading="lazy">
+  <img class="shot" src="screens/computer.png" alt="极光词典主界面：英文单词 computer 的详细解释卡片，含音标、考试标签、复数与中英双解释义" loading="lazy">
   <div class="gallery">
-    <img class="shot" src="screens/dark_en.png" alt="深色主题查询 serendipity" loading="lazy">
-    <img class="shot" src="screens/zh.png" alt="中文成语查询" loading="lazy">
-    <img class="shot" src="screens/settings.png" alt="设置页面" loading="lazy">
+    <img class="shot" src="screens/light.png" alt="浅色主题首页：产品介绍与数据统计" loading="lazy">
+    <img class="shot" src="screens/dark.png" alt="深色主题首页" loading="lazy">
+    <img class="shot" src="screens/green.png" alt="护眼青绿主题，长时间阅读更柔和" loading="lazy">
+    <img class="shot" src="screens/settings.png" alt="设置页面：三套主题切换与各项偏好" loading="lazy">
   </div>
 </div>
 
@@ -198,7 +199,7 @@
       <div class="feat"><div class="ic">🔄</div><h3>自动更新</h3><p>默认关闭；可手动检查或开启启动检查，下载经 SHA256 校验、更新前备份、失败回滚，并自动解除网络标记。</p></div>
       <div class="feat"><div class="ic">🃏</div><h3>生词本复习</h3><p>一键收藏生词，闪卡复习巩固，支持导出纯文本与 Anki 牌组格式。</p></div>
       <div class="feat"><div class="ic">🔊</div><h3>离线发音</h3><p>英文、中文双语音，基于 Windows 内置语音合成，无需联网即可朗读。</p></div>
-      <div class="feat"><div class="ic">🎨</div><h3>全新界面 · 深浅色</h3><p>v1.0.4 整体排版重设计，双击标题栏即可最大化；浅色/深色主题，支持全局热键 Ctrl+Alt+D。</p></div>
+      <div class="feat"><div class="ic">🎨</div><h3>三套主题 · 护眼</h3><p>浅色 / 深色 / 护眼青绿一键切换，滚动条随主题变色；排版疏朗，支持全局热键 Ctrl+Alt+D。</p></div>
     </div>
   </div>
 </section>
@@ -222,7 +223,7 @@
         <a class="btn btn-primary" href="https://github.com/haoeastspeed/AuroraDict/releases/latest" target="_blank" rel="noopener">⬇ 下载最新版本</a>
         <a class="btn btn-ghost" href="https://github.com/haoeastspeed/AuroraDict/releases" target="_blank" rel="noopener">所有版本</a>
       </div>
-      <p class="req">系统要求：Windows 10 / 11（32 位与 64 位均可，亦兼容 Win7 / 8.1）· 需 .NET Framework 4.5+（Win10/11 自带 4.8）· 约 103 MB<br>国内直连 GitHub 较慢，建议开启本地 / 系统代理；自动更新会依次尝试直连、系统代理与 127.0.0.1:7890。</p>
+      <p class="req">系统要求：Windows 10 / 11（32 位与 64 位均可，亦兼容 Win7 / 8.1）· 需 .NET Framework 4.5+（Win10/11 自带 4.8）· 约 103 MB<br>v1.0.6 起程序运行即自动解除自身网络标记（MOTW），避免 SmartScreen 拦截；国内直连 GitHub 较慢，建议开启本地 / 系统代理；自动更新会依次尝试直连、系统代理与 127.0.0.1:7890。</p>
     </div>
   </div>
 </section>
